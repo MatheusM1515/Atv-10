@@ -11,17 +11,21 @@ public class Professor {
     private String data_cadastro;
     private String data_atualizacao;
     private String data_remocao;
+    private String login;
+    private String senha;
 
-    public Professor(String nome, String email,java.sql.Date  data_nascimento, String cpf,String cidade, String estado_civil){
+    public Professor(String nome, String email,java.sql.Date  data_nascimento, String cpf,String cidade, String estado_civil, String login, String senha){
         this.nome = nome;
         this.email = email;
         this.data_nascimento = data_nascimento;
         this.cpf = cpf;
         this.cidade=cidade;
         this.estado_civil = estado_civil;
+        this.login = login;
+        this.senha = senha;
     }
 
-    public Professor(int id, String nome, String email,java.sql.Date  data_nascimento, String cpf,String cidade, String estado_civil) {
+    public Professor(int id, String nome, String email,java.sql.Date  data_nascimento, String cpf,String cidade, String estado_civil, String login, String senha) {
         this.id=id;
         this.nome = nome;
         this.email = email;
@@ -29,6 +33,8 @@ public class Professor {
         this.cpf = cpf;
         this.cidade=cidade;
         this.estado_civil = estado_civil;
+        this.login = login;
+        this.senha = senha;
     }
 
     public int getId() {
@@ -83,6 +89,14 @@ public class Professor {
     public void setEstado_civil(String estado_civil) {
         this.estado_civil = estado_civil;
     }
+
+    public String getLogin(){return this.login;}
+
+    public void setLogin(String login){this.login = login;}
+
+    public String getSenha(){return this.senha;}
+
+    public void setSenha(String senha){this.senha = senha;}
 
 
 }

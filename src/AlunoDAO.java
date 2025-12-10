@@ -12,6 +12,11 @@ public class AlunoDAO {
      * CREATE: Insere um novo aluno no BD.
      */
     public void inserir(Aluno aluno) {
+
+        if (!ProfessorDAO.Sessao.isLogado()){
+            System.out.println("Erro: Apenas professores logados podem cadastrar alunos!");
+            return;
+        }
         // Query SQL usa '?' (placeholders) para segurança (PreparedStatement).
         String sql = "INSERT INTO alunos (nome, email) VALUES (?, ?)";
 
